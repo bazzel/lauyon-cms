@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'capistrano'
+gem 'haml'
 gem 'jquery-rails', '~> 2.0.0'
 gem 'rails', '3.2.8'
 gem 'rvm-capistrano'
@@ -24,6 +25,11 @@ group :assets do
   gem 'uglifier'
 end
 
+group :development do
+  gem 'hpricot'
+  gem 'ruby_parser'
+end
+
 group :production do
   gem 'fog'
 end
@@ -43,10 +49,11 @@ end
 # gem 'debugger'
 
 # Refinery CMS
-gem 'refinerycms', '~> 2.0.0'
+gem 'refinerycms'
 
 # Specify additional Refinery CMS Extensions here (all optional):
-gem 'refinerycms-i18n', '~> 2.0.0'
+gem 'refinerycms-i18n'
+gem 'refinerycms-settings'
 #  gem 'refinerycms-blog', '~> 2.0.0'
 #  gem 'refinerycms-inquiries', '~> 2.0.0'
 #  gem 'refinerycms-search', '~> 2.0.0'

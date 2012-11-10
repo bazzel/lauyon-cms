@@ -10,7 +10,7 @@ $break          : 12;
 
 #page_container {
   @include container;
-  @include susy-grid-background;
+  //@include susy-grid-background;
 }
 #page {
   @include prefix(3);
@@ -19,7 +19,7 @@ $break          : 12;
 @include at-breakpoint($break) {
   #page_container {
     position: relative;
-    @include susy-grid-background;
+    //@include susy-grid-background;
     @include set-container-width;
   }
   #page {
