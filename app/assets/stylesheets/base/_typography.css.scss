@@ -1,0 +1,63 @@
+// http://www.google.com/webfonts#UsePlace:use/Collection:Open+Sans
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import 'compass/typography/vertical_rhythm';
+@import 'modular-scale';
+
+@include establish-baseline;
+
+body {
+  font-family: $sans-serif-font-family;
+}
+
+p {
+  @include margin-trailer;
+}
+
+h1 {
+  @include margin-leader(1, ms(3));;
+  @include adjust-font-size-to(ms(3));
+  font-weight: 500;
+}
+
+// h2 {
+//   @include margin-leader(1, ms(2));;
+//   @include adjust-font-size-to(ms(2));
+// }
+//
+// h3 {
+//   @include margin-leader(1, ms(1));;
+//   @include adjust-font-size-to(ms(1));
+// }
+//
+// h4 {
+//   @include margin-leader(1, ms(-1));;
+//   @include adjust-font-size-to(ms(-1));
+// }
+
+ul {
+  @include margin-trailer(1);
+  list-style-type: disc;
+  margin-left: 1em;
+}
+
+p + ul {
+  @include margin-leader(-1);
+}
+
+li {
+  margin-left: 1em;
+  padding-left: .5em;
+}
+
+a {
+  &:link, &:visited {
+    text-decoration: none;
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+::selection, ::-moz-selection {
+//text-shadow: none;
+}

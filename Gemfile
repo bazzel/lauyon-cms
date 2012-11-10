@@ -16,6 +16,7 @@ gem 'mysql2'
 group :assets do
   gem 'coffee-rails'
   gem 'compass-rails'
+  gem 'modular-scale'
   gem 'sass-rails'
   gem 'susy'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
