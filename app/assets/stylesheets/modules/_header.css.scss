@@ -1,0 +1,16 @@
+@include at-breakpoint($break) {
+  #header {
+    @include prefix(3, $break);
+    background: image-url('lauyon2klein.jpeg') no-repeat;
+    height: rhythm(7);
+    h1, h2 {
+      text-align: center;
+      &, a {
+        color: #999;
+      }
+      a:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
