@@ -36,3 +36,6 @@ LauyonCms::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 end
+
+# Do not store assets in Amazon S3.
+Refinery::Core.config.s3_backend = false
