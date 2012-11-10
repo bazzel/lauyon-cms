@@ -1,0 +1,31 @@
+@import 'susy';
+
+$total-columns  : 7;
+$column-width   : 4em;
+$gutter-width   : 1em;
+$grid-padding   : $gutter-width;
+
+$break          : 12;
+
+
+#page_container {
+  @include container;
+  /*@include susy-grid-background;*/
+}
+#page {
+  @include prefix(3);
+}
+
+@include at-breakpoint($break) {
+  #page_container {
+    position: relative;
+    /*@include susy-grid-background;*/
+    @include set-container-width;
+  }
+  #page {
+    @include prefix(3, $break);
+  }
+  #menu {
+    position: absolute;
+  }
+}
