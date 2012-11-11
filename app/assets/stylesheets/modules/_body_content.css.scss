@@ -1,5 +1,9 @@
 @import 'mixins/curled_page';
+@import 'compass/typography/vertical_rhythm';
 
 #body_content {
   @include curled-page;
+  h1 {
+    @include rhythm(1, 0, 0, 1, ms(3));
+  }
 }

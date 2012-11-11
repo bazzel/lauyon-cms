@@ -13,7 +13,7 @@ $break          : 12;
   //@include susy-grid-background;
 }
 #page {
-  @include prefix(3);
+  @include prefix(2);
 }
 
 @include at-breakpoint($break) {
@@ -23,11 +23,11 @@ $break          : 12;
     @include set-container-width;
   }
   #page {
-    @include prefix(3, $break);
+    @include prefix(2, $break);
   }
   #menu {
     position: absolute;
-    left: 0;
+    left: $gutter-width;
     top: rhythm(10);
   }
 }

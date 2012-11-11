@@ -2,11 +2,11 @@
   #header {
     @include prefix(3, $break);
     background: image-url('lauyon2klein.jpeg') no-repeat;
-    height: rhythm(7);
+    height: rhythm(6);
     h1, h2 {
       text-align: center;
       &, a {
-        color: #999;
+        color: gray;
       }
       a:hover {
         text-decoration: none;

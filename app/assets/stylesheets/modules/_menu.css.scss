@@ -1,0 +1,18 @@
+@import 'compass/typography/lists/bullets';
+@import 'compass/typography/vertical_rhythm';
+
+#menu {
+  ul {
+    @include no-bullets;
+    margin: rhythm(.5) 0;
+    li {
+      padding: 0;
+      a {
+        // TODO: Extract color
+        color: gray;
+        font-weight: 700;
+        @include adjust-font-size-to(ms(1), 2);
+      }
+    }
+  }
+}

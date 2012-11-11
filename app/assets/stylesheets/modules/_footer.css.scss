@@ -1,0 +1,7 @@
+@import 'compass/typography/vertical_rhythm';
+
+footer {
+  color: grey;
+  @include adjust-font-size-to(ms(-2));
+  text-align: right;
+}
