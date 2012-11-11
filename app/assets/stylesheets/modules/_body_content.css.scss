@@ -1,0 +1,5 @@
+@import 'mixins/curled_page';
+
+#body_content {
+  @include curled-page;
+}

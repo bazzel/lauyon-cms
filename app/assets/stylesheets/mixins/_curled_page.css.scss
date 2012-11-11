@@ -1,0 +1,187 @@
+// Inspiration: http://nicolasgallagher.com/css-drop-shadows-without-images/demo/
+@import 'compass/css3';
+@import 'compass/typography/vertical_rhythm';
+
+// Creates a curled-page.
+//
+// $corner - [default:$top-left] ( top-left | top-right | bottom-right | bottom-left) Corner to curl
+// $direction - [default:$vertical] ( vertical | horizontal )
+//
+// Example:
+//   .page {
+//     @include curled-page;
+//   }
+//
+//   .page {
+//     @include curled-page(bottom-right, horizontal);
+//   }
+@mixin curled-page(
+  $corner    : top-left,
+  $direction : vertical
+) {
+  @include drop-shadow;
+  @include curl($corner, $direction);
+  @include curl-shadow($corner, $direction);
+}
+
+// Helper mixins, but presumably useable as stand alone
+@mixin drop-shadow {
+  position: relative;
+  padding: rhythm(1) 2*$gutter-width;
+  background: #fff;
+  @include box-shadow(rgba(0, 0, 0, .3) 0 1px 4px, rgba(0, 0, 0, .1) 0 0 40px inset);
+
+  &:before {
+    content:"";
+    position:absolute;
+    z-index:-2;
+  }
+}
+
+@mixin curl-base {
+  @include rhythm-borders(1px); // Don't mess up the vertical rhythm
+  border-color: #efefef;
+  &:before {
+    width: 50%;
+    height: 50%;
+    max-width: 100px;
+    max-height: 100px;
+  }
+}
+
+@mixin curl(
+  $corner,
+  $direction
+) {
+  $small      : 6px;
+  $large      : 120px;
+  $hor-radii  : 0 0 0 0;
+  $ver-radii  : 0 0 0 0;
+  $hor-radius : if($direction == vertical, $small, $large);
+  $ver-radius : if($direction == vertical, $large, $small);
+
+  @include curl-base;
+
+  @if $corner == top-left {
+    $hor-radii: $hor-radius 0 0 0;
+    $ver-radii: $ver-radius 0 0 0;
+  } @else if $corner == top-right {
+    $hor-radii: 0 $hor-radius 0 0;
+    $ver-radii: 0 $ver-radius 0 0;
+  } @else if $corner == bottom-right {
+    $hor-radii: 0 0 $hor-radius 0;
+    $ver-radii: 0 0 $ver-radius 0;
+  } @else {
+    $hor-radii: 0 0 0 $hor-radius;
+    $ver-radii: 0 0 0 $ver-radius;
+  }
+
+  @include border-radius($hor-radii, $ver-radii);
+}
+
+@mixin curl-shadow(
+  $corner,
+  $direction
+) {
+  &:before {
+    @include curl-position($corner, $direction);
+    @include curl-box-shadow($corner, $direction);
+    @include curl-rotate-and-skew($corner, $direction);
+  }
+}
+
+@mixin curl-position(
+  $corner,
+  $direction
+) {
+  $small: 10px;
+  $large: 12px;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+
+  @if $corner == top-left {
+    @if $direction == vertical {
+      left: $large;
+      top: $small;
+    } @else {
+      left: $small;
+      top: $large;
+    }
+  } @else if $corner == top-right {
+    @if $direction == vertical {
+      right: $large;
+      top: $small;
+    } @else {
+      right: $small;
+      top: $large;
+    }
+  } @else if $corner == bottom-right {
+    @if $direction == vertical {
+      right: $large;
+      bottom: $small;
+    } @else {
+      right: $small;
+      bottom: $large;
+    }
+  } @else {
+    @if $direction == vertical {
+      left: $large;
+      bottom: $small;
+    } @else {
+      left: $small;
+      bottom: $large;
+    }
+  }
+}
+
+@mixin curl-box-shadow(
+  $corner,
+  $direction
+) {
+  $offset     : 8px;
+  $neg-offset : -1*$offset;
+  $offsets    : 0 0; // x-y pair
+  $color      : rgba(0, 0, 0, .5);
+  $blur       : 12px;
+
+  @if $corner == top-left {
+    $offsets: if($direction == vertical, $neg-offset 0, 0 $neg-offset);
+  } @else if $corner == top-right {
+    $offsets: if($direction == vertical, $offset 0, 0 $neg-offset);
+  } @else if $corner == bottom-right {
+    $offsets: if($direction == vertical, $offset 0, 0 $offset);
+  } @else {
+    $offsets: if($direction == vertical, $neg-offset 0, 0 $offset);
+  }
+
+  @include box-shadow($color $offsets $blur);
+}
+
+@mixin curl-rotate-and-skew(
+  $corner,
+  $direction
+) {
+  $rotation-sign    : 1;
+  $rotation-degrees : 3deg;
+  $skew-sign        : 1;
+  $skew-degrees     : 8deg;
+
+  @if ($corner == top-left) or ($corner == bottom-right) {
+    $rotation-sign: if($direction == vertical, -1, 1);
+  } @else {
+    $rotation-sign: if($direction == vertical, 1, -1);
+  }
+
+  $rotate: $rotation-sign * $rotation-degrees;
+
+  // Same algorithm goes for skewing:
+  $skew-sign: $rotation-sign;
+  $skew: $skew-sign * $skew-degrees;
+
+  @include skew($skew);
+  @include rotate($rotate);
+}
+
+
