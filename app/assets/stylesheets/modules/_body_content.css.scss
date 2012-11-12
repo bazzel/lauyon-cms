@@ -5,7 +5,8 @@
 #body_content {
   @include curled-page;
   h1 {
-    @include rhythm(1, 0, 0, 1, ms(3));
+    @include adjust-font-size-to(ms(2));
+    @include rhythm(1, 0, 0, 0, ms(2));
     @include text-shadow(rgba(0, 0, 0, .25) 0px 1px 3px);
   }
 }
