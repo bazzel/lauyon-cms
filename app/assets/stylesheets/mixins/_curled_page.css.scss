@@ -38,13 +38,7 @@
 }
 
 @mixin curl-base {
-  /*@include rhythm-borders(1px); // Don't mess up the vertical rhythm*/
-  border: 1px solid;
-  @include horizontal-borders(1px);
-  padding: {
-    left: 2*$gutter-width;
-    right: 2*$gutter-width;
-  }
+  @include rhythm-borders(1px, 2); // Don't mess up the vertical rhythm
   border-color: #efefef;
   &:before {
     width: 50%;
