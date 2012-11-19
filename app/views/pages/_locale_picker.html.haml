@@ -1,0 +1,5 @@
+- if Refinery::I18n.enabled && (locales ||= Refinery::I18n.frontend_locales).present? && locales.many?
+  %ul.locales
+    - locales.each do |locale|
+      %li
+        = link_to Refinery::I18n.locales[locale], "/#{locale}", :title => Refinery::I18n.locales[locale], :class => "flags-#{locale}"
