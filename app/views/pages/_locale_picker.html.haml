@@ -2,4 +2,4 @@
   %ul.locales
     - locales.each do |locale|
       %li
-        = link_to Refinery::I18n.locales[locale], "/#{locale}", :title => Refinery::I18n.locales[locale], :class => "flags-#{locale}"
+        = link_to Refinery::I18n.locales[locale], refinery.url_for(:locale => locale), :title => Refinery::I18n.locales[locale], :class => "flags-#{locale}"
