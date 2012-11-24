@@ -11,3 +11,6 @@
 
 # Added by Refinery CMS Inquiries engine
 Refinery::Inquiries::Engine.load_seed
+
+# Added by Refinery CMS Clients extension
+Refinery::Clients::Engine.load_seed

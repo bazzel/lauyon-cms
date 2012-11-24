@@ -1,3 +1,9 @@
+PATH
+  remote: vendor/extensions
+  specs:
+    refinerycms-clients (1.0)
+      refinerycms-core (~> 2.0.8)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -249,6 +255,7 @@ DEPENDENCIES
   mysql2
   rails (= 3.2.8)
   refinerycms
+  refinerycms-clients!
   refinerycms-i18n
   refinerycms-inquiries
   refinerycms-settings

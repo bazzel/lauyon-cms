@@ -59,3 +59,5 @@ gem 'refinerycms-settings'
 gem 'refinerycms-inquiries'
 #  gem 'refinerycms-search', '~> 2.0.0'
 #  gem 'refinerycms-page-images', '~> 2.0.0'
+
+gem 'refinerycms-clients', :path => 'vendor/extensions'
