@@ -1,0 +1,32 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(client) -%>">
+  <span class='title'>
+    <%= client.name %>
+    <%- unless client.show_on_page? -%>
+      <span class='label'><%= ::I18n.t('hidden', :scope => 'refinery.admin.pages.page') %></span>
+    <% end %>
+    <% if Refinery.i18n_enabled? and Refinery::I18n.frontend_locales.many? %>
+      <span class='preview'>
+        <% client.translations.each do |translation| %>
+          <%= link_to refinery_icon_tag("flags/#{translation.locale}.png", :size => '16x11'),
+                       refinery.edit_clients_admin_client_path(client, :switch_locale => translation.locale),
+                       :class => 'locale' %>
+        <% end %>
+      </span>
+    <% end %>
+
+  </span>
+  <span class='actions'>
+
+    <%= link_to refinery_icon_tag("application_go.png"), refinery.clients_client_path(client),
+        :title => t('.view_live_html'),
+        :target => "_blank" %>
+
+    <%= link_to refinery_icon_tag("application_edit.png"), refinery.edit_clients_admin_client_path(client),
+         :title => t('.edit') %>
+    <%= link_to refinery_icon_tag("delete.png"), refinery.clients_admin_client_path(client),
+        :class => "cancel confirm-delete",
+        :title => t('.delete'),
+        :confirm => t('message', :scope => 'refinery.admin.delete', :title => client.name),
+        :method => :delete %>
+  </span>
+</li>

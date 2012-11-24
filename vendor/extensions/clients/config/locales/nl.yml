@@ -1,0 +1,42 @@
+nl:
+  refinery:
+    plugins:
+      clients:
+        title: Referenties
+    clients:
+      admin:
+        clients:
+          actions:
+            create_new: Maak een nieuwe referentie
+            reorder: Wijzig de volgorde van de referenties
+            reorder_done: Klaar met het wijzingen van de volgorde van de referenties
+          records:
+            title: Referenties
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen referenties. Druk op 'Maak een nieuwe referentie' om de eerste aan te maken.
+          client:
+            view_live_html: Bekijk deze referentie op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze referentie
+            delete: Verwijder deze referentie definitief
+          form:
+            url: "Adres van de website"
+            url_help: "Voer hier de url van de website van de referentie in, bv 'http://www.lauyon.nl'. De site wordt in een nieuwe pagina/tab geopend."
+            show_on_page: Toon op pagina
+            show_on_page_help: Als je referenties tijdelijk niet aan de eindgebruiker wilt tonen, dan hoef je deze niet verwijderen. In plaats daarvan vink je deze optie uit.
+            show_on_page_description: Vink deze box aan als de referentie op de pagina moet worden getoond.
+      clients:
+        show:
+          other: Andere referenties
+    admin:
+      image_picker:
+        none_selected: Er is op dit moment geen afbeelding geselecteerd. Klik a.u.b. hier om er een toe te voegen.
+        remove_current: Verwijder de huidige afbeelding
+
+  activerecord:
+    attributes:
+      'refinery/clients/client':
+        name: Naam
+        description: Beschrijving
+        logo: Logo
+        url: Website
+        show_on_page: Toon deze referentie

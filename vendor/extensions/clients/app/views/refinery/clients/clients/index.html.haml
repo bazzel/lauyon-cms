@@ -1,0 +1,11 @@
+- content_for :body do
+  %ul#clients
+    - @clients.each do |client|
+      %li(class="#{cycle('odd', 'even', name: 'row_class')}")
+        %h3
+          = link_to_if client.url.present?, client.name, client.url, target: '_blank' do
+            = client.name
+        = link_to_if client.logo, image_fu(client.logo, "200x200", class: "image-align-#{cycle("left","right", name: 'image_swap')}"), client.url, target: '_blank'
+        = raw client.description
+
+= render '/refinery/content_page'
