@@ -15,6 +15,7 @@ ul#clients {
     @include background-image(radial-gradient(50% 0, rgba(0, 0, 0, .2), transparent 70%));
     @include background-size(100% 6px);
     background-repeat: no-repeat;
+    min-height: rhythm(7);
     @include rhythm(0,1,1,0);
     &:first-child {
       background: none;
