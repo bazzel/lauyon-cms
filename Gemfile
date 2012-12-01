@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'capistrano'
+gem 'favicon_maker' # Create favicon files in various sizes from a base image
 gem 'haml'
 gem 'jquery-rails', '~> 2.0.0'
 gem 'rails', '3.2.8'

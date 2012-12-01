@@ -53,6 +53,25 @@ namespace :deploy do
   end
 end
 
+# FaviconMaker
+# See also: https://github.com/follmann/favicon_maker
+require 'favicon_maker'
+
+namespace :favicon do
+  task :create_versions do
+    options = {
+      :root_dir => release_path,
+      :input_dir => File.join('app', 'assets', 'public'),
+      :output_dir => 'public'
+    }
+    FaviconMaker::Generator.create_versions(options) do |filepath|
+      puts "Created favicon: #{filepath}"
+    end
+  end
+end
+
+after 'deploy:update_code', 'favicon:create_versions'
+
 after 'deploy:update_code', 'deploy:symlink_shared'
 after "deploy:restart", 'deploy:cleanup'
 
