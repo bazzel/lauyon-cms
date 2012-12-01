@@ -1,12 +1,12 @@
 @import 'compass/css3/text-shadow';
-@import 'mixins/curled_page';
 @import 'compass/typography/vertical_rhythm';
+@import 'mixins/curled_page';
 
 #body_content {
   @include curled-page;
   h1 {
     @include adjust-font-size-to(ms(2));
     @include rhythm(0, 0, 0, 0, ms(2));
-    @include text-shadow(rgba(0, 0, 0, .25) 0px 1px 3px);
+    @include text-shadow;
   }
 }

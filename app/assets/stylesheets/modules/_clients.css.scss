@@ -1,10 +1,7 @@
 @import 'compass/typography/vertical_rhythm';
 @import 'compass/typography/lists/bullets';
-@import 'compass/css3/images';
-@import 'compass/css3/background-size';
 
 ul#clients {
-  /*@include margin-leader;*/
   @include no-bullets;
   margin: 0;
 
@@ -12,13 +9,9 @@ ul#clients {
     padding: 0;
     clear: both;
     overflow: auto;
-    @include background-image(radial-gradient(50% 0, rgba(0, 0, 0, .2), transparent 70%));
-    @include background-size(100% 6px);
-    background-repeat: no-repeat;
     min-height: rhythm(7);
     @include rhythm(0,1,1,0);
     &:first-child {
-      background: none;
       padding-top: 0;
     }
     &:last-child{
@@ -26,11 +19,9 @@ ul#clients {
     }
     h3 {
       @include adjust-font-size-to(ms(1), 2);
-      @include text-shadow(rgba(0, 0, 0, .25) 0px 1px 3px);
+      @include text-shadow;
       a {
-        color: black;
         &:hover {
-          color: #DA004C;
           text-decoration: none;
         }
       }

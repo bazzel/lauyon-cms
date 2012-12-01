@@ -9,19 +9,13 @@
       padding: 0;
       &.selected {
         a {
-          color: #DA004C;
-          @include text-shadow(rgba(0, 0, 0, .3) 0px 1px 1px);
+          @include text-shadow;
         }
       }
       a {
-        color: gray;
-        // TODO: Extract color
         font-weight: 700;
         text-decoration: none;
         @include adjust-font-size-to(ms(1), 2);
-        &:hover {
-          color: #DA004C;
-        }
       }
     }
   }

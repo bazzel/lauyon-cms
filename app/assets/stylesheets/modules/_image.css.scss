@@ -2,8 +2,8 @@
 
 img.image-align-left, img.image-align-right {
   padding: 6px;
-  border: 1px solid #f5f5f5;
-  @include box-shadow(rgba(black, .4) 0px 3px 6px);
+  border: 1px solid;
+  @include box-shadow;
 }
 img.image-align-left {
   margin-right: 2em;

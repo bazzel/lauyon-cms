@@ -2,18 +2,13 @@
 @import 'mixins/form';
 @import 'mixins/button';
 
-
-$input-background-color: #f5f5f5;
-$button-foreground-color: #808080;
-$selected-input-border-color: rgba(218, 0, 76, .7);
-
 form.new_inquiry {
   @include rhythm(.5, 0, 0, .5);
   label {
     display: none;
   }
   input[type='text'], input[type='email'], textarea {
-    @include input(ms(0), $input-background-color, $selected-input-border-color);
+    @include input(ms(0));
     width: 24em;
     padding: {
       left: .5em;
@@ -24,6 +19,6 @@ form.new_inquiry {
     margin-bottom: -6px;
   }
   input[type='submit'] {
-    @include button($button-foreground-color, ms(0));
+    @include button(ms(0));
   }
 }

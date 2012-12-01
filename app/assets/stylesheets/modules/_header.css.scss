@@ -3,16 +3,12 @@
 @include at-breakpoint($break) {
   #header {
     @include prefix(3, $break);
-    background: image-url('lauyon2klein.jpeg') no-repeat;
     height: rhythm(6);
     h1 {
-      @include text-shadow(rgba(0, 0, 0, .25) 0px 1px 3px);
+      @include text-shadow;
     }
     h1, h2 {
       text-align: center;
-      &, a {
-        color: gray;
-      }
       a:hover {
         text-decoration: none;
       }

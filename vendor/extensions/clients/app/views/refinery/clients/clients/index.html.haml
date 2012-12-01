@@ -6,7 +6,12 @@
         %h3
           = link_to_if client.url.present?, client.name, client.url, target: '_blank' do
             = client.name
-        = link_to_if client.logo, image_fu(client.logo, "200x200", class: "image-align-#{cycle("left","right", name: 'image_swap')}"), client.url, target: '_blank'
+        -# Height of picture must not exceed 192px (which corresponds
+        -# with 7 lines of 24px (=line-height of a paragraph)
+        -# plus a margin of 1 line of 24px).
+        -# Since this image will have a padding of 6px and border of 1px
+        -# the outerheight of the image will get 179px.
+        = link_to_if client.logo, image_fu(client.logo, "200x165", class: "image-align-#{cycle("left","right", name: 'image_swap')}"), client.url, target: '_blank'
         = raw client.description
 
 = render '/refinery/content_page'

@@ -2,26 +2,31 @@
 @import 'compass/css3/box-shadow';
 @import 'compass/typography/vertical_rhythm';
 
+$default-background-color: white;
+$default-selected-border-color: #aaa;
+$selected-background-color: white;
+
 // Formats an input element with a top shadow
 // a highlights the selected element with a border
 // of the provided color.
 @mixin input(
   $font-size,
-  $background-color,
-  $selected-border-color
+  $background-color: $default-background-color,
+  $selected-border-color: $default-selected-border-color
 ) {
-    background: $background-color;
-    border: none;
-    @include border-radius(3px);
-    @include box-shadow(rgba(0, 0, 0, .1) 0px 2px 3px inset);
-    @include adjust-font-size-to($font-size);
-    @include rhythm(.25, .25, .25, .25, $font-size);
-    &:focus {
-      background: white;
-      outline: none;
-      @include box-shadow($selected-border-color 0px 0px 0px 3px,
-                          rgba(0, 0, 0, .2) 0px 2px 3px inset,
-                          rgba(0, 0, 0, .15) 0px 5px 5px);
-    }
-
+  background: $background-color;
+  border: none;
+  @include border-radius(3px);
+  @include box-shadow(rgba(0, 0, 0, .1) 0px 2px 3px inset);
+  @include adjust-font-size-to($font-size);
+  @include rhythm(.25, .25, .25, .25, $font-size);
+  &:focus {
+    background: $selected-background-color;
+    outline: none;
+    @include box-shadow(
+      $selected-border-color 0px 0px 0px 3px,
+      rgba(0, 0, 0, .2) 0px 2px 3px inset,
+      rgba(0, 0, 0, .15) 0px 5px 5px
+    );
+  }
 }

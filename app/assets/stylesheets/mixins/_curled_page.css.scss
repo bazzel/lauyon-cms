@@ -39,7 +39,6 @@
 
 @mixin curl-base {
   @include rhythm-borders(1px, 2); // Don't mess up the vertical rhythm
-  border-color: #efefef;
   &:before {
     width: 50%;
     height: 50%;

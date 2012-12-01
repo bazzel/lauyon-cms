@@ -1,11 +1,13 @@
 @import 'compass/typography/vertical_rhythm';
 @import 'fancy-buttons';
 
+$default-color: #aaa;
+
 // Creates a fancy button, respecting the vertical rhythm
 // by adjusting the padding and margin.
 @mixin button(
-  $color,
-  $font-size
+  $font-size,
+  $color: $default-color
 ) {
   $lines: 1;
   $margin: .65;
