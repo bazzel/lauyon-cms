@@ -61,7 +61,7 @@ namespace :favicon do
   task :create_versions do
     options = {
       :root_dir => release_path,
-      :input_dir => File.join('app', 'assets', 'public'),
+      :input_dir => File.join('public'),
       :output_dir => 'public'
     }
     FaviconMaker::Generator.create_versions(options) do |filepath|
