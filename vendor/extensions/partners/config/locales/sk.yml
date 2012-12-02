@@ -1,0 +1,30 @@
+sk:
+  refinery:
+    plugins:
+      partners:
+        title: Partners
+    partners:
+      admin:
+        partners:
+          actions:
+            create_new: Pridať Partner
+            reorder: Preusporiadať Partners
+            reorder_done: Koniec radenia Partners
+          records:
+            title: Partners
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Partners. Kliknite na "Pridať Partner" pre pridanie prvého partner.
+          partner:
+            view_live_html: Zobraziť náhľad partner<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť partner
+            delete: Zmazať partner
+      partners:
+        show:
+          other: Daľšie Partners
+  activerecord:
+    attributes:
+      'refinery/partners/partner':
+        name: Name
+        logo: Logo
+        url: Url
+        show_on_page: Show On Page

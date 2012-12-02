@@ -1,0 +1,6 @@
+- content_for :body do
+  = raw @page.content_for(:body)
+  %ul#partners
+    - @partners.each do |partner|
+      %li= link_to image_fu(partner.logo), partner.url, target: '_blank'
+= render '/refinery/content_page'

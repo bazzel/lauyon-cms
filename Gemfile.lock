@@ -3,6 +3,8 @@ PATH
   specs:
     refinerycms-clients (1.0)
       refinerycms-core (~> 2.0.8)
+    refinerycms-partners (1.0)
+      refinerycms-core (~> 2.0.8)
 
 GEM
   remote: https://rubygems.org/
@@ -264,6 +266,7 @@ DEPENDENCIES
   refinerycms-clients!
   refinerycms-i18n
   refinerycms-inquiries
+  refinerycms-partners!
   refinerycms-settings
   ruby_parser
   rvm-capistrano

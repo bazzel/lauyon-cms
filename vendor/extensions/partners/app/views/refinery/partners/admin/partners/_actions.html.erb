@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::Partners::Admin::PartnersController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.partners_admin_partners_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_partners_admin_partner_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Partners::Admin::PartnersController.sortable? && ::Refinery::Partners::Partner.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Partners"),
+                 refinery.partners_admin_partners_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Partners"),
+                 refinery.partners_admin_partners_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>
