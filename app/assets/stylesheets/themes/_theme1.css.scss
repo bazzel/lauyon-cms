@@ -108,3 +108,17 @@ form.new_inquiry {
     @include fancy-button-colors($button-foreground-color)
   }
 }
+
+// partners
+ul#partners {
+  li {
+    a {
+      @include box-shadow(rgba(0, 0, 0, .3) 0px 3px 6px);
+      &:hover {
+        @include box-shadow(#DA004C 0px 3px 10px);
+      }
+    }
+  }
+}
+
+

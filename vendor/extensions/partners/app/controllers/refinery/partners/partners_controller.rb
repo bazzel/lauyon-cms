@@ -14,7 +14,7 @@ module Refinery
     protected
 
       def find_all_partners
-        @partners = Partner.order('position ASC')
+        @partners = Partner.show_on_page.order('position ASC')
       end
 
       def find_page

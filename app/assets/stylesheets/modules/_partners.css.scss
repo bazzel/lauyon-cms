@@ -1,0 +1,20 @@
+@import 'compass/typography/lists/bullets';
+@import 'compass/css3/box-shadow';
+
+ul#partners {
+  @include no-bullets;
+  margin: 0;
+
+  li {
+    margin: 0;
+    padding: 0;
+    a {
+      display: inline-block;
+      padding: 5px;
+      margin: 5px;
+      border: 1px solid #f5f5f5;
+      @include box-shadow;
+    }
+  }
+}
+

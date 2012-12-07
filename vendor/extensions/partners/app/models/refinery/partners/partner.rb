@@ -5,6 +5,8 @@ module Refinery
 
       attr_accessible :name, :logo_id, :url, :show_on_page, :position
 
+      scope :show_on_page, where(:show_on_page => true)
+
       acts_as_indexed :fields => [:name, :url]
 
       validates :name, :presence => true, :uniqueness => true
