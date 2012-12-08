@@ -2,6 +2,11 @@
 
 Refinery::I18n.configure do |config|
    config.enabled = false
+   # Switching off I18n can cause errors, due to missing slug values.
+   # The following query will fix this:
+   # UPDATE `refinery_page_translations` a JOIN `refinery_page_translations` b ON a.refinery_page_id = b.refinery_page_id
+   # SET a.slug = b.slug
+   # WHERE a.locale = 'nl' AND b.locale = 'en';
 
   # config.default_locale = :en
 
