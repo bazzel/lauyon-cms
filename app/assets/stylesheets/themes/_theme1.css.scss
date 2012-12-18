@@ -29,7 +29,7 @@ $shade: rgba(black, .3);
 
 // clients
 ul#clients {
-  li {
+  > li {
     @include background-image(radial-gradient(50% 0, $shade, transparent 70%));
     @include background-size(100% 6px);
     background-repeat: no-repeat;

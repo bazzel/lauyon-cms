@@ -5,12 +5,17 @@ ul#clients {
   @include no-bullets;
   margin: 0;
 
-  li {
+  > li {
     padding: 0;
     clear: both;
     overflow: auto;
     min-height: rhythm(7);
     @include rhythm(0,1,1,0);
+    li {
+      margin-left: .5em;
+      padding-left: 0;
+      list-style-type: disc;
+    }
     &:first-child {
       padding-top: 0;
     }
