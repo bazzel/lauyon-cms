@@ -36,7 +36,8 @@ nl:
     attributes:
       'refinery/clients/client':
         name: Naam
-        description: Beschrijving
+        description: Beschrijving (kort)
+        body: Beschrijving (uitgebreid)
         logo: Logo
         url: Website
         show_on_page: Toon deze referentie
