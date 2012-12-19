@@ -9,4 +9,8 @@
     @include rhythm(0, 0, 0, 0, ms(2));
     @include text-shadow;
   }
+  .read-more {
+    @include adjust-font-size-to(ms(-1));
+    text-align: right;
+  }
 }

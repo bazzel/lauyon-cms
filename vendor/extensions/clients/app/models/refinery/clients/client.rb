@@ -3,7 +3,7 @@ module Refinery
     class Client < Refinery::Core::BaseModel
       self.table_name = 'refinery_clients'
 
-      attr_accessible :name, :description, :logo_id, :url, :show_on_page, :position
+      attr_accessible :name, :description, :body, :logo_id, :url, :show_on_page, :position
 
       translates :description
 
@@ -13,7 +13,7 @@ module Refinery
         attr_accessible :locale
       end
 
-      acts_as_indexed :fields => [:name, :description, :url]
+      acts_as_indexed :fields => [:name, :description, :body, :url]
 
       validates :name, :presence => true, :uniqueness => true
       validates :url, :url => true

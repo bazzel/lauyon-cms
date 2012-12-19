@@ -13,5 +13,7 @@
         -# the outerheight of the image will get 179px.
         = link_to_if client.logo, image_fu(client.logo, "200x165", class: "image-align-#{cycle("left","right", name: 'image_swap')}"), client.url, target: '_blank'
         = raw client.description
+        - if client.body.present?
+          .read-more= link_to "#{t('read_more')} &raquo;".html_safe, refinery.clients_client_path(client)
 
 = render '/refinery/content_page'

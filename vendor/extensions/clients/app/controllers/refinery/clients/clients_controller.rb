@@ -11,6 +11,10 @@ module Refinery
         present(@page)
       end
 
+      def show
+        @client = Client.find params[:id]
+      end
+
     protected
 
       def find_all_clients
