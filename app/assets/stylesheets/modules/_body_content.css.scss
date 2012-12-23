@@ -3,7 +3,7 @@
 @import 'mixins/curled_page';
 
 #body_content {
-  @include curled-page;
+  padding: 0 $gutter-width;
   h1 {
     @include adjust-font-size-to(ms(2));
     @include rhythm(0, 0, 0, 0, ms(2));
@@ -12,5 +12,20 @@
   .read-more {
     @include adjust-font-size-to(ms(-1));
     text-align: right;
+  }
+}
+
+@include at-breakpoint($break-1) {
+  #body_content {
+    @include curled-page;
+    /*h1 {*/
+      /*@include adjust-font-size-to(ms(2));*/
+      /*@include rhythm(0, 0, 0, 0, ms(2));*/
+      /*@include text-shadow;*/
+    /*}*/
+    /*.read-more {*/
+      /*@include adjust-font-size-to(ms(-1));*/
+      /*text-align: right;*/
+    /*}*/
   }
 }

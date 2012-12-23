@@ -1,0 +1,22 @@
+#header {
+  /*background: image-url('lauyon-mini.jpg') no-repeat;*/
+  h1 {
+    @include header-shadow;
+  }
+  h1, h2 {
+    &, a {
+      color: $color-variant1;
+    }
+  }
+}
+
+@include at-breakpoint($break-1) {
+  #header {
+    background: image-url('lauyon2klein.jpeg') no-repeat;
+  }
+}
+
+@include at-breakpoint($break-2) {
+
+}
+

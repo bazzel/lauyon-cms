@@ -19,6 +19,8 @@ $shade: rgba(black, .3);
 
 // Modules
 //
+@import 'header';
+
 // body content
 #body_content {
   border-color: $border-color;
@@ -37,7 +39,7 @@ ul#clients {
       background: none;
     }
     h3 {
-      @include header-shadow;
+      text-align: center;
       a {
         color: black;
         &:hover {
@@ -48,22 +50,20 @@ ul#clients {
   }
 }
 
+@include at-breakpoint($break-1) {
+  ul#clients {
+    > li {
+      h3 {
+        @include header-shadow;
+        text-align: left;
+      }
+    }
+  }
+}
+
 // footer
 footer {
   color: $color-variant1;
-}
-
-// header
-#header {
-  background: image-url('lauyon2klein.jpeg') no-repeat;
-  h1 {
-    @include header-shadow;
-  }
-  h1, h2 {
-    &, a {
-      color: $color-variant1;
-    }
-  }
 }
 
 // images
@@ -72,25 +72,7 @@ img.image-align-left, img.image-align-right {
   @include box-shadow($shade 0px 3px 6px);
 }
 
-// menu
-#menu {
-  ul {
-    li {
-      &.selected {
-        a {
-          color: $base-color;
-          @include text-shadow($shade 0px 1px 1px);
-        }
-      }
-      a {
-        color: $color-variant1;
-        &:hover {
-          color: $base-color;
-        }
-      }
-    }
-  }
-}
+@import 'menu';
 
 // inquiries
 form.new_inquiry {

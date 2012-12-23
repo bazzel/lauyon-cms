@@ -1,21 +1,77 @@
 @import 'compass/typography/lists/bullets';
 @import 'compass/typography/vertical_rhythm';
+@import 'compass/typography/lists';
+@import 'compass/css3/box-shadow';
 
 #menu {
+  background: white;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  @include box-shadow(rgba(black, .3) 0px 3px 6px);
+  .menu-button {
+    text-align: right;
+    padding-right: $gutter-width;
+    display: block;
+  }
+  a {
+    @include adjust-font-size-to(ms(1), 2);
+    font-weight: 700;
+    text-decoration: none;
+    display: block;
+  }
   ul {
+    margin: 0;
+    display: none;
     @include no-bullets;
-    margin: rhythm(.5) 0;
     li {
       padding: 0;
+      @include box-shadow(rgba(black, 0.3) 0 1px 0 inset);
       &.selected {
         a {
           @include text-shadow;
         }
       }
-      a {
-        font-weight: 700;
-        text-decoration: none;
-        @include adjust-font-size-to(ms(1), 2);
+    }
+  }
+}
+
+@include at-breakpoint($break-1) {
+  #menu {
+    background: none;
+    position: static;
+    @include box-shadow(none);
+    .menu-button {
+      display: none;
+    }
+    ul {
+      margin: rhythm(.5) 0;
+      display: block;
+      li {
+        display: inline-block;
+        @include box-shadow(none);
+        a {
+          padding: 0 .25em;
+        }
+      }
+    }
+  }
+}
+
+@include at-breakpoint($break-2) {
+  #menu {
+    text-align: left;
+    width: auto;
+    position: absolute;
+    left: $gutter-width;
+    top: rhythm(10);
+    ul {
+      li {
+        display: list-item;
+        a {
+          padding-right: 0;
+        }
       }
     }
   }

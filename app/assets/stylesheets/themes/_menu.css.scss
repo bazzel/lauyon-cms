@@ -1,0 +1,26 @@
+#menu {
+  background: url(/assets/lauyon-mini.jpg) 4px 4px no-repeat white;
+  a {
+    color: $color-variant1;
+    &:hover {
+      color: $base-color;
+    }
+  }
+  ul {
+    li {
+      &.selected {
+        a {
+          color: $base-color;
+          @include text-shadow($shade 0px 1px 1px);
+        }
+      }
+    }
+  }
+}
+
+@include at-breakpoint($break-1) {
+  #menu {
+    background: none;
+  }
+}
+

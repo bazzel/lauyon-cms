@@ -4,12 +4,11 @@
 ul#clients {
   @include no-bullets;
   margin: 0;
-
+  @include padding-leader(1);
   > li {
     padding: 0;
     clear: both;
     overflow: auto;
-    min-height: rhythm(7);
     @include rhythm(0,1,1,0);
     li {
       margin-left: .5em;
@@ -23,11 +22,52 @@ ul#clients {
       padding-bottom: 0;
     }
     h3 {
-      @include adjust-font-size-to(ms(1), 2);
       @include text-shadow;
+      font-weight: bold;
       a {
         &:hover {
           text-decoration: none;
+        }
+      }
+      & + a img.image-align-left, & + a img.image-align-right {
+        float: none;
+        display: block;
+        @include margin-leader(1);
+        @include margin-trailer(1);
+        margin: {
+          left: auto;
+          right: auto;
+        }
+      }
+    }
+  }
+}
+
+@include at-breakpoint($break-1) {
+  ul#clients {
+    > li {
+      min-height: rhythm(7);
+      h3 {
+        @include adjust-font-size-to(ms(1), 1);
+        font-weight: normal;
+        & + a img.image-align-left, & + a img.image-align-right {
+          display: inline-block;
+          @include margin-leader(0);
+          @include margin-trailer(0);
+        }
+        & + a img.image-align-left {
+          float: left;
+          margin: {
+            left: 0;
+            right: 2em;
+          }
+        }
+        & + a img.image-align-right {
+          float: right;
+          margin: {
+            left: 2em;
+            right: 0;
+          }
         }
       }
     }

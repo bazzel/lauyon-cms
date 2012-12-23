@@ -1,17 +1,35 @@
+@import 'compass/typography/vertical_rhythm';
 @import 'compass/css3/text-shadow';
 
-@include at-breakpoint($break) {
+#header {
+  text-align: center;
+  @include padding-leader(2);
+  h1 {
+    margin-top: 0;
+    letter-spacing: -1px;
+    @include text-shadow;
+  }
+  h1, h2 {
+    a:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+@include at-breakpoint($break-1) {
   #header {
-    @include prefix(3, $break);
+    @include prefix(2, $break-1);
+    @include padding-leader(0);
     height: rhythm(6);
     h1 {
-      @include text-shadow;
+      letter-spacing: 0;
+      @include margin-leader(1, ms(3));;
     }
-    h1, h2 {
-      text-align: center;
-      a:hover {
-        text-decoration: none;
-      }
-    }
+  }
+}
+
+@include at-breakpoint($break-2) {
+  #header {
+    @include prefix(2, $break-2);
   }
 }

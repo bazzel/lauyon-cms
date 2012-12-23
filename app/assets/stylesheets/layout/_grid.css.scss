@@ -1,33 +1,30 @@
 @import 'susy';
 
-$total-columns  : 7;
+/*$total-columns  : 7;*/
 $column-width   : 4em;
 $gutter-width   : 1em;
 $grid-padding   : $gutter-width;
 
-$break          : 12;
-
+/*$break-1        : 9;*/
+/*$break-2        : 12;*/
 
 #page_container {
-  @include container;
+  @include container($break-1, $break-2);
   /*@include susy-grid-background;*/
 }
-#page {
-  @include prefix(2);
+
+@include at-breakpoint($break-1) {
+  #page_container {
+    /*@include susy-grid-background;*/
+  }
 }
 
-@include at-breakpoint($break) {
+@include at-breakpoint($break-2) {
   #page_container {
-    position: relative;
     /*@include susy-grid-background;*/
-    @include set-container-width;
+    position: relative;
   }
   #page {
-    @include prefix(2, $break);
-  }
-  #menu {
-    position: absolute;
-    left: $gutter-width;
-    top: rhythm(10);
+    @include prefix(2, $break-2);
   }
 }

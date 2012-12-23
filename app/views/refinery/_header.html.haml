@@ -2,4 +2,3 @@
   = link_to Refinery::Core.site_name, refinery.root_path
 %h2= ::Refinery::Setting.get(:subtitle) || "[Subtitle] (Settings -> Subtitle)"
 = render(:partial => "/refinery/menu", locals: { dom_id: 'menu', css: 'menu'})
-= render :partial => '/pages/locale_picker'
