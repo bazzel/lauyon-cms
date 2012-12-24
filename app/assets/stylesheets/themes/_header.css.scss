@@ -12,11 +12,13 @@
 
 @include at-breakpoint($break-1) {
   #header {
-    background: image-url('lauyon2klein.jpeg') no-repeat;
+    background: image-url('lauyon-midi.jpg') no-repeat;
   }
 }
 
 @include at-breakpoint($break-2) {
-
+  #header {
+    background: image-url('lauyon2klein.jpeg') no-repeat;
+  }
 }
 
