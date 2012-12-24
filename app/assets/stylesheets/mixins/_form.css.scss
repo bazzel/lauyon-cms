@@ -21,6 +21,7 @@ $selected-background-color: white;
   @include adjust-font-size-to($font-size);
   @include rhythm(.25, .25, .25, .25, $font-size);
   &:focus {
+    -webkit-appearance: none;
     background: $selected-background-color;
     outline: none;
     @include box-shadow(

@@ -1,6 +1,7 @@
 // http://www.google.com/webfonts#UsePlace:use/Collection:Open+Sans:400,600,700
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
 @import 'compass/typography/vertical_rhythm';
+@import 'susy';
 @import 'modular-scale';
 
 @include establish-baseline;
@@ -60,6 +61,23 @@ a {
   }
 }
 
+img {
+  max-width: 80px;
+  height: auto;
+}
+
 ::selection, ::-moz-selection {
 //text-shadow: none;
+}
+
+@include at-breakpoint($break-1) {
+  img {
+    max-width: 160px;
+  }
+}
+
+@include at-breakpoint($break-2) {
+  img {
+    max-width: 100%;
+  }
 }

@@ -2,5 +2,11 @@
 
 footer {
   @include adjust-font-size-to(ms(-2));
-  text-align: right;
+  text-align: center;
+}
+
+@include at-breakpoint($break-1) {
+  footer {
+    text-align: right;
+  }
 }

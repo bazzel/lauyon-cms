@@ -1,3 +1,4 @@
+@import 'compass/css3/box-sizing';
 @import 'compass/typography/vertical_rhythm';
 @import 'mixins/form';
 @import 'mixins/button';
@@ -9,7 +10,8 @@ form.new_inquiry {
   }
   input[type='text'], input[type='email'], textarea {
     @include input(ms(0));
-    width: 24em;
+    width: 100%;
+    @include box-sizing(border-box);
     padding: {
       left: .5em;
       right: .5em;
@@ -20,5 +22,14 @@ form.new_inquiry {
   }
   input[type='submit'] {
     @include button(ms(0));
+  }
+}
+
+@include at-breakpoint($break-1) {
+  form.new_inquiry {
+    input[type='text'], input[type='email'], textarea {
+      width: 24em;
+      @include box-sizing(content-box);
+    }
   }
 }
