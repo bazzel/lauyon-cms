@@ -1,5 +1,4 @@
-@import 'compass/typography/vertical_rhythm';
-@import 'compass/typography/lists/bullets';
+@import 'compass';
 
 ul#clients {
   @include no-bullets;

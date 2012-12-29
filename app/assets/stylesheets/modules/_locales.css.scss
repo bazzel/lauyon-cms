@@ -1,7 +1,4 @@
-@import "compass/typography/lists/inline-list";
-@import "compass/typography/text/replacement";
-@import 'compass/typography/vertical_rhythm';
-@import "compass/utilities/sprites";
+@import 'compass';
 @import "icons/flags/*.png";
 
 @include all-flags-sprites;

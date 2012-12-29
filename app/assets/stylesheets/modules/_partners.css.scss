@@ -1,5 +1,4 @@
-@import 'compass/typography/lists/bullets';
-@import 'compass/css3/box-shadow';
+@import 'compass';
 
 ul#partners {
   @include no-bullets;
