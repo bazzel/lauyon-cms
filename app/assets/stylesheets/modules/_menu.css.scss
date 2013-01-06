@@ -60,8 +60,16 @@
   #menu {
     text-align: left;
     width: auto;
-    position: absolute;
-    left: $gutter-width;
+    // Position the menu in the left side-bar
+    // but make it fixed so it stay visible
+    // all the time
+    // Was:
+    // position: absolute;
+    // left: $gutter-width;
+    // top: rhythm(10);
+    // Is:
+    margin-left: -2 * ($column-width + $grid-padding);
+    position: fixed;
     top: rhythm(10);
     ul {
       li {
