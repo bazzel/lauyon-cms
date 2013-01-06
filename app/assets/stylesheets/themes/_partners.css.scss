@@ -1,0 +1,11 @@
+ul#partners {
+  li {
+    a {
+      @include box-shadow(rgba(0, 0, 0, .3) 0px 3px 6px);
+      &:hover {
+        @include box-shadow($base-color 0px 3px 10px);
+      }
+    }
+  }
+}
+

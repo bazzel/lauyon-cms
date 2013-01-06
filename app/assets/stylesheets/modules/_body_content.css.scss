@@ -4,12 +4,14 @@
 #body_content {
   padding: 0 $gutter-width;
   h1 {
-    @include adjust-font-size-to(ms(2));
-    @include rhythm(0, 0, 0, 0, ms(2));
-    @include text-shadow;
+    @include adjust-font-size-to(ms(1), 1);
+    @include rhythm(1, 0, 0, 0, ms(1));
+  }
+  .read-more, .go-back {
+    @include margin-leader(1, ms(-1));
+    @include adjust-font-size-to(ms(-1));
   }
   .read-more {
-    @include adjust-font-size-to(ms(-1));
     text-align: right;
   }
 }
@@ -17,5 +19,10 @@
 @include at-breakpoint($break-1) {
   #body_content {
     @include curled-page;
+    h1 {
+      @include adjust-font-size-to(ms(2), 1);
+      @include rhythm(.5, 0, 0, .5, ms(2));
+      @include text-shadow;
+    }
   }
 }

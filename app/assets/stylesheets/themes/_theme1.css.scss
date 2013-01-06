@@ -1,6 +1,4 @@
-@import 'compass/css3/text-shadow';
-@import 'compass/css3/images';
-@import 'compass/css3/background-size';
+@import 'compass';
 
 $base-color: #DA004C; // pink
 $color-variant1: #808080; // grey
@@ -17,90 +15,21 @@ $shade: rgba(black, .3);
   @include text-shadow($shade 0px 1px 3px);
 }
 
+a {
+  &:link, &:visited {
+    color: $color-variant1;
+  }
+  &:hover {
+    color: $base-color;
+  }
+}
+
 // Modules
-//
 @import 'header';
-
-// body content
-#body_content {
-  border-color: $border-color;
-  h1 {
-    @include header-shadow;
-  }
-}
-
-// clients
-ul#clients {
-  > li {
-    @include background-image(radial-gradient(50% 0, $shade, transparent 70%));
-    @include background-size(100% 6px);
-    background-repeat: no-repeat;
-    &:first-child {
-      background: none;
-    }
-    h3 {
-      text-align: center;
-      a {
-        color: black;
-        &:hover {
-          color: $base-color;
-        }
-      }
-    }
-  }
-}
-
-@include at-breakpoint($break-1) {
-  ul#clients {
-    > li {
-      h3 {
-        @include header-shadow;
-        text-align: left;
-      }
-    }
-  }
-}
-
-// footer
-footer {
-  color: $color-variant1;
-}
-
-// images
-img.image-align-left, img.image-align-right {
-  border-color: $border-color;
-  @include box-shadow($shade 0px 3px 6px);
-}
-
+@import 'body_content';
+@import 'clients';
+@import 'footer';
+@import 'image';
 @import 'menu';
-
-// inquiries
-form.new_inquiry {
-  input[type='text'], input[type='email'], textarea {
-    background: $input-background-color;
-    &:focus {
-      @include box-shadow(
-        $selected-input-border-color 0px 0px 0px 3px,
-        rgba(0, 0, 0, .2) 0px 2px 3px inset,
-        rgba(0, 0, 0, .15) 0px 5px 5px
-      );
-    }
-  }
-  input[type='submit'] {
-    @include fancy-button-colors($button-foreground-color)
-  }
-}
-
-// partners
-ul#partners {
-  li {
-    a {
-      @include box-shadow(rgba(0, 0, 0, .3) 0px 3px 6px);
-      &:hover {
-        @include box-shadow($base-color 0px 3px 10px);
-      }
-    }
-  }
-}
-
-
+@import 'inquiries';
+@import 'partners';

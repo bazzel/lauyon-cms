@@ -1,0 +1,16 @@
+form.new_inquiry {
+  input[type='text'], input[type='email'], textarea {
+    background: $input-background-color;
+    &:focus {
+      @include box-shadow(
+        $selected-input-border-color 0px 0px 0px 3px,
+        rgba(0, 0, 0, .2) 0px 2px 3px inset,
+        rgba(0, 0, 0, .15) 0px 5px 5px
+      );
+    }
+  }
+  input[type='submit'] {
+    @include fancy-button-colors($button-foreground-color)
+  }
+}
+

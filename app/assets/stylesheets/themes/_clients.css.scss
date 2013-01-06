@@ -1,0 +1,30 @@
+ul#clients {
+  > li {
+    @include background-image(radial-gradient(50% 0, $shade, transparent 70%));
+    @include background-size(100% 6px);
+    background-repeat: no-repeat;
+    &:first-child {
+      background: none;
+    }
+    h3 {
+      a {
+        color: black;
+        &:hover {
+          color: $base-color;
+        }
+      }
+    }
+  }
+}
+
+@include at-breakpoint($break-1) {
+  ul#clients {
+    > li {
+      h3 {
+        @include header-shadow;
+      }
+    }
+  }
+}
+
+

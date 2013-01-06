@@ -1,0 +1,7 @@
+#body_content {
+  border-color: $border-color;
+  h1 {
+    @include header-shadow;
+  }
+}
+

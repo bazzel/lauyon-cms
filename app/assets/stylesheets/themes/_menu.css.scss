@@ -1,11 +1,5 @@
 #menu {
   background: url(/assets/lauyon-mini.jpg) 4px 4px no-repeat white;
-  a {
-    color: $color-variant1;
-    &:hover {
-      color: $base-color;
-    }
-  }
   ul {
     li {
       &.selected {

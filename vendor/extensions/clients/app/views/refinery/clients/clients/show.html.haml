@@ -3,5 +3,6 @@
 
 - content_for :body do
   = raw @client.body
+  .go-back= link_to "&laquo; #{t('go_back')}".html_safe, refinery.clients_clients_path
 
 = render '/refinery/content_page'

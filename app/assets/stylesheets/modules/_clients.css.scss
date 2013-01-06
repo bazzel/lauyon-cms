@@ -3,7 +3,6 @@
 ul#clients {
   @include no-bullets;
   margin: 0;
-  @include padding-leader(1);
   > li {
     padding: 0;
     clear: both;
@@ -50,6 +49,7 @@ ul#clients {
       min-height: rhythm(7);
       h3 {
         @include adjust-font-size-to(ms(1), 1);
+        @include rhythm(.5, 0, 0, .5, ms(1));
         font-weight: normal;
         & + a img.image-align-left, & + a img.image-align-right {
           display: inline-block;
