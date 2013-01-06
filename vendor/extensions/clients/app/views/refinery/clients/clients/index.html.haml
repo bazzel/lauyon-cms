@@ -3,7 +3,8 @@
   %ul#clients
     - @clients.each do |client|
       %li(class="#{cycle('odd', 'even', name: 'row_class')}")
-        %h3
+        -#See also ./show.html.haml#link_to
+        %h3{ id: ['client', client.id] }
           = link_to_if client.url.present?, client.name, client.url, target: '_blank' do
             = client.name
         -# Height of picture must not exceed 192px (which corresponds
