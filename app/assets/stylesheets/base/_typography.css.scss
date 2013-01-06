@@ -6,9 +6,8 @@
 
 @include establish-baseline;
 
-body {
+body, input, textarea {
   font-family: $sans-serif-font-family;
-  -webkit-user-select:none;
   -webkit-tap-highlight-color: transparent;
 }
 

@@ -12,5 +12,9 @@ form.new_inquiry {
   input[type='submit'] {
     @include fancy-button-colors($button-foreground-color)
   }
+
+  .placeholder {
+    color: $color-variant1;
+  }
 }
 
