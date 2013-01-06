@@ -38,6 +38,8 @@
   #menu {
     background: none;
     position: static;
+    width: auto;
+    @include pre(2, $break-1);
     @include box-shadow(none);
     .menu-button {
       display: none;
@@ -59,7 +61,7 @@
 @include at-breakpoint($break-2) {
   #menu {
     text-align: left;
-    width: auto;
+    @include pre(0);
     // Position the menu in the left side-bar
     // but make it fixed so it stay visible
     // all the time
@@ -68,7 +70,6 @@
     // left: $gutter-width;
     // top: rhythm(10);
     // Is:
-    margin-left: -2 * ($column-width + $grid-padding);
     position: fixed;
     top: rhythm(10);
     ul {

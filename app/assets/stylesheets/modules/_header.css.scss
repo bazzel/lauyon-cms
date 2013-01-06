@@ -9,6 +9,9 @@
     @include text-shadow;
   }
   h1, h2 {
+    a {
+      display: block;
+    }
     a:hover {
       text-decoration: none;
     }
@@ -17,9 +20,11 @@
 
 @include at-breakpoint($break-1) {
   #header {
-    @include prefix(2, $break-1);
     @include padding-leader(0);
     height: rhythm(6);
+    h1, h2 {
+      text-indent: space(2, $break-1);
+    }
     h1 {
       letter-spacing: 0;
       @include margin-leader(1, ms(3));;
@@ -29,6 +34,8 @@
 
 @include at-breakpoint($break-2) {
   #header {
-    @include prefix(2, $break-2);
+    h1, h2 {
+      text-indent: space(2, $break-2);
+    }
   }
 }
